@@ -1,5 +1,6 @@
 #!/bin/env python3
 import json
+import os
 import struct
 import set_j
 import set_a
@@ -41,6 +42,7 @@ for replace_fr, replace_to in zip(setC, setD):
     exec_writes.append((file_off, data_u16))
 
 
+os.makedirs(OROOT, exist_ok=True)
 with open(OROOT + 'main', 'wb') as fp:
     with open(FPATH_MAIN, 'rb') as fi:
         data = bytearray(fi.read())
@@ -50,7 +52,7 @@ with open(OROOT + 'main', 'wb') as fp:
 
 
 for fname in FNAME:
-    with open(NROOT + fname + '.json', 'r') as fp:
+    with open(NROOT + fname + '.json', 'r', encoding='utf8') as fp:
         s_pairs = json.load(fp)
     with open(FROOT + fname, 'rb') as fp:
         assert fp.read(16) == MAGIC

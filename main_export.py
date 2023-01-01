@@ -1,5 +1,6 @@
 #!/bin/env python3
 import json
+import os
 import struct
 from common import FROOT, FNAME, NROOT, MAGIC
 
@@ -19,9 +20,10 @@ def process_file(in_filename, out_filename):
             string = str_data[offset:str_data.index(b'\0', offset)]
             string = string.decode('cp932')
             out_data.append({'old': string, 'new': string})
-    with open(out_filename, 'w') as fp:
+    with open(out_filename, 'w', encoding='utf8') as fp:
         json.dump(out_data, fp, indent=4, ensure_ascii=False)
 
 
+os.makedirs(NROOT, exist_ok=True)
 for name in FNAME:
     process_file(FROOT + name, NROOT + name + '.json')
