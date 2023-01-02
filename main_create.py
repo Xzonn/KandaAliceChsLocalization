@@ -5,7 +5,7 @@ import struct
 import set_j
 import set_a
 import set_b
-from common import MAGIC, FROOT, FNAME, NROOT, OROOT, FPATH_MAIN
+from common import MAGIC, FROOT, FNAME, NROOT, OROOT_SCRIPT, OROOT_MAIN, FPATH_MAIN
 
 U16_BE = struct.Struct('>H')
 U16_LE = struct.Struct('<H')
@@ -42,8 +42,8 @@ for replace_fr, replace_to in zip(setC, setD):
     exec_writes.append((file_off, data_u16))
 
 
-os.makedirs(OROOT, exist_ok=True)
-with open(OROOT + 'main', 'wb') as fp:
+os.makedirs(OROOT_MAIN, exist_ok=True)
+with open(OROOT_MAIN + 'main', 'wb') as fp:
     with open(FPATH_MAIN, 'rb') as fi:
         data = bytearray(fi.read())
     for file_off, data_u16 in exec_writes:
@@ -51,6 +51,7 @@ with open(OROOT + 'main', 'wb') as fp:
     fp.write(data)
 
 
+os.makedirs(OROOT_SCRIPT, exist_ok=True)
 for fname in FNAME:
     with open(NROOT + fname + '.json', 'r', encoding='utf8') as fp:
         s_pairs = json.load(fp)
@@ -80,7 +81,7 @@ for fname in FNAME:
             str_data.append(0)
             while len(str_data) % 16 != 0:
                 str_data.append(0)
-    with open(OROOT + fname, 'wb') as fp:
+    with open(OROOT_SCRIPT + fname, 'wb') as fp:
         fp.write(MAGIC)
         fp.write(U32_3.pack(ins_len, len(str_data), len(off_data)))
         fp.write(bytes([0, 0, 0, 0]))

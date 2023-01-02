@@ -1,5 +1,5 @@
 MAGIC = bytes([0x52, 0x53, 0x34, 0x00, 0x01] + [0x00] * 11)
-FROOT = 'files_old/01_script/'
+FROOT = '../romfs/data_yuri/01_script/'
 FNAME = ['01a_00001.bin', '01a_01000.bin', '01a_01100.bin', '01a_01200.bin',
          '01a_01300.bin', '01a_01400.bin', '01a_01500.bin', '01a_01600.bin',
          '01a_01601.bin', '01a_01602.bin', '01a_01700.bin', '01a_02000.bin',
@@ -11,5 +11,6 @@ FNAME = ['01a_00001.bin', '01a_01000.bin', '01a_01100.bin', '01a_01200.bin',
          '01a_04600.bin', '01a_04601.bin', '01a_05000.bin',
          'macro.bin', 'start_alice.bin', 'start_PS4.bin', 'title_alice.bin', 'title_ret2.bin', 'title_ret.bin']
 NROOT = 'files_new/'
-OROOT = 'files_out/'
-FPATH_MAIN = 'files_old/main'
+OROOT_SCRIPT = '../mod/romfs/data_yuri/01_script/'
+OROOT_MAIN = '../mod/exefs/'
+FPATH_MAIN = '../exefs/main'
