@@ -1,0 +1,98 @@
+[
+  {
+    "old": "NONE",
+    "new": "NONE"
+  },
+  {
+    "old": "start_alice",
+    "new": "start_alice"
+  },
+  {
+    "old": "start_alice_START",
+    "new": "start_alice_START"
+  },
+  {
+    "old": "START_KOJIROH",
+    "new": "START_KOJIROH"
+  },
+  {
+    "old": "START_MARINA",
+    "new": "START_MARINA"
+  },
+  {
+    "old": "START_HIMURO",
+    "new": "START_HIMURO"
+  },
+  {
+    "old": "START_VT",
+    "new": "START_VT"
+  },
+  {
+    "old": "START_RT",
+    "new": "START_RT"
+  },
+  {
+    "old": "START_RD",
+    "new": "START_RD"
+  },
+  {
+    "old": "MOVIE_START",
+    "new": "MOVIE_START"
+  },
+  {
+    "old": "start_koji",
+    "new": "start_koji"
+  },
+  {
+    "old": "start_koji_START",
+    "new": "start_koji_START"
+  },
+  {
+    "old": "start_mari",
+    "new": "start_mari"
+  },
+  {
+    "old": "start_mari_START",
+    "new": "start_mari_START"
+  },
+  {
+    "old": "start_him",
+    "new": "start_him"
+  },
+  {
+    "old": "start_him_START",
+    "new": "start_him_START"
+  },
+  {
+    "old": "004_emk_1",
+    "new": "004_emk_1"
+  },
+  {
+    "old": "004_emk_1_START",
+    "new": "004_emk_1_START"
+  },
+  {
+    "old": "005_elast",
+    "new": "005_elast"
+  },
+  {
+    "old": "005_elast_START",
+    "new": "005_elast_START"
+  },
+  {
+    "old": "Reverse_drive",
+    "new": "Reverse_drive"
+  },
+  {
+    "old": "Reverse_drive_START",
+    "new": "Reverse_drive_START"
+  },
+  {
+    "old": "TITLE_IN",
+    "new": "TITLE_IN"
+  },
+  {
+    "old": "EVE_RT_OP",
+    "new": "EVE_RT_OP"
+  }
+]
