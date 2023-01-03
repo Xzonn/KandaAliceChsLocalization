@@ -17,6 +17,9 @@ setA = set_a.get_setA()
 setB = set_b.get_setB()
 setC = setJ - setA  # replace from
 setD = setB - setA  # replace to
+setC, setD = setC - setD, setD - setC # 重复部分无需替换
+setC = sorted(filter(lambda x: 0x4E00 < ord(x) < 0xA000, setC)) # 仅替换 CJK 区
+setD = sorted(setD)
 
 print(len(setJ), len(setA), len(setB), len(setC), len(setD))
 
