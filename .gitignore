@@ -1,3 +1,10 @@
 __pycache__/
-files_old/
-files_out/
+*.py[cod]
+*$py.class
+
+maintenance/
+out/
+
+bin/*.xml
+bin/*.pdb
+*.ps1
