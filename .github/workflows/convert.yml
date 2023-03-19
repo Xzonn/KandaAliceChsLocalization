@@ -52,4 +52,4 @@ jobs:
   build:
     needs: convert
     if: needs.convert.outputs.updated == 'true'
-    uses: Xzonn/ParanormasightChsLocalization/.github/workflows/build.yml@master
+    uses: Xzonn/KandaAliceChsLocalization/.github/workflows/build.yml@master
