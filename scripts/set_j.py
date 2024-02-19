@@ -4,7 +4,7 @@ import struct
 from common import FPATH_MAIN
 
 U16_LE = struct.Struct('<H')
-FILE_TO_VM = 0x80003cf
+FILE_TO_VM = 0x080003cf
 BEGIN_VOFF = 0x0814ae98
 BEGIN_FOFF = BEGIN_VOFF - FILE_TO_VM
 
@@ -23,20 +23,16 @@ def get_setJ():
         if code_jis < 0x8140:
             continue
 
-        curr_off = None
-        curr_dat = None
         while True:
             file_u16 = U16_LE.unpack(fdata[file_off:file_off+2])[0]
-            file_off = file_off+2
+            file_off = file_off + 2
             if file_u16 == code_u16:
-                curr_off = file_off - 2
-                curr_dat = fdata[curr_off:curr_off+2]
                 break
-        curr_chr = curr_dat.decode('utf-16le')
+        curr_chr = chr(code_u16)
         # print('F', hex(curr_off),
         #       'V', hex(curr_off + FILE_TO_VM),
         #       'J', hex(code_jis),
         #       'U', hex(code_u16))
         jis_chars.add(curr_chr)
-        jis_offst[code_jis] = curr_off
+        jis_offst[code_jis] = file_off - 2
     return jis_chars, jis_offst

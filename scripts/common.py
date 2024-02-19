@@ -12,6 +12,6 @@ FNAME = ['01a_00001.bin', '01a_01000.bin', '01a_01100.bin', '01a_01200.bin',
          # 'macro.bin', 'start_alice.bin', 'start_PS4.bin', 'title_alice.bin', 'title_ret2.bin', 'title_ret.bin'
          ]
 NROOT = '../texts/zh_Hans/'
-OROOT_SCRIPT = '../out/romfs/data_yuri/01_script/'
-OROOT_MAIN = '../out/exefs/'
+OROOT_SCRIPT = '../out/01003bd013e30000/romfs/data_yuri/01_script/'
+OROOT_MAIN = '../out/01003bd013e30000/exefs/'
 FPATH_MAIN = '../files/main'
