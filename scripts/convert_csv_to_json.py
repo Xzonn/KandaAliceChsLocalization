@@ -7,12 +7,13 @@ import os
 
 os.chdir(os.path.dirname(os.path.dirname(__file__)))
 
-DIR_ORIGINAL = "master/texts"
+DIR_JSON = "master/texts"
+DIR_CSV = "."
 
-languages = os.listdir(DIR_ORIGINAL)
+languages = os.listdir(DIR_JSON)
 
 def get_sheet(language: str, sheet_name: str) -> dict[str, str]:
-  csvfile = open(f"{language}/{sheet_name}.csv", "r", encoding="utf-8-sig", newline="")
+  csvfile = open(f"{DIR_CSV}/{language}/{sheet_name}.csv", "r", encoding="utf-8-sig", newline="")
   reader = csv.reader(csvfile)
 
   row_iter = reader
@@ -29,12 +30,12 @@ for language in languages:
   if language in ["ja", "en"]:
     continue
 
-  files = os.listdir(f"{DIR_ORIGINAL}/{language}")
+  files = os.listdir(f"{DIR_JSON}/{language}")
   for file_name in files:
     if not file_name.endswith(".json"):
       continue
 
-    with open(f"{DIR_ORIGINAL}/ja/{file_name}", "r", -1, "utf-8") as reader:
+    with open(f"{DIR_JSON}/ja/{file_name}", "r", -1, "utf-8") as reader:
       original_messages = json.load(reader)
     if len(original_messages) < 1:
       continue
@@ -51,6 +52,6 @@ for language in languages:
       new_line = chinese[msgidx]
       translated_messages[i] = new_line
 
-    writer = open(f"{DIR_ORIGINAL}/{language}/{file_name}", "w", -1, "utf-8")
+    writer = open(f"{DIR_JSON}/{language}/{file_name}", "w", -1, "utf-8")
     json.dump(translated_messages, writer, indent=2, ensure_ascii=False)
     writer.close()
